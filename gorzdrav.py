@@ -25,14 +25,13 @@ def district(): #получает словарь районов в формат�
         distr[i['id']] = i['name']
     return distr
 
-def hospital(url): #пол
-    hospital = {}
-    url = 'https://gorzdrav.spb.ru/_api/api/v2/shared/districts'
+def hospital(url): #получает словарь адресов больниц
+    hospital_dic = {}
     rez = get_resp(url)
     for i in rez['result']:
-        print(f'{i['id']} - {i['name']}')
-        distr[i['id']] = i['name']
-    return distr
+        print(f'{i['id']} - {i['address']} - {i['lpuShortName']}')
+        hospital_dic[i['id']] = i['address']
+    return hospital_dic
 
 def rez():
     pass
