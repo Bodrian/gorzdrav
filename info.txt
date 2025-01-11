@@ -1,0 +1,26 @@
+https://gorzdrav.spb.ru/_api/api/v2/shared/districts - список районов
+https://gorzdrav.spb.ru/_api/api/v2/shared/district/3/lpus - список медучереждений в 3 районе
+https://gorzdrav.spb.ru/_api/api/v2/schedule/lpu/229/specialties - информация по всем свободным специальностям в больнице с ид 229
+https://gorzdrav.spb.ru/_api/api/v2/schedule/lpu/30/speciality/981/doctors - информация по доступным врачам в больнице 30 по специальности 981
+https://gorzdrav.spb.ru/_api/api/v2/schedule/lpu/1138/doctor/36/timetable - расписание врача 36 в больнице 1138
+https://gorzdrav.spb.ru/_api/api/v2/schedule/lpu/30/doctor/222618/appointments - доступные назначения к врачу
+
+районы
+1 - Адмиралтейский
+2 - Василеостровский
+3 - Выборгский
+4 - Калининский
+5 - Кировский
+6 - Колпинский
+7 - Красногвардейский
+8 - Красносельский
+9 - Кронштадтский
+10 - Курортный
+11 - Московский
+12 - Невский
+13 - Петроградский
+14 - Петродворцовый
+15 - Приморский
+16 - Пушкинский
+17 - Фрунзенский
+18 - Центральный
