@@ -29,11 +29,12 @@ def spec(url):
 def numer(url):
     numer_list = []
     rez = get_resp(url)
-    if rez.get('result') is None:
-        numer_list = ['нет номерков']
-    else:
-        for i in rez['result']:
-            numer_list.append(i['visitStart'])
+    if rez is not False:
+        if rez.get('result') is None:
+            numer_list = ['нет номерков']
+        else:
+            for i in rez['result']:
+                numer_list.append(i['visitStart'])
     return numer_list
 
 
