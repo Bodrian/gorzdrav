@@ -6,10 +6,11 @@ token = token_bot #сюда пишем "token to access the HTTP API" от @BotF
 
 #функция отправляет сообщение
 def sent_message(message, name='Boris'):
-	if name == 'Olya':
-		chat_id = person_id_olya #сюда пишем "Current chat ID:" его узнаем @ifiers телеграмм
-	else:
-		chat_id = person_id_boris
-	telegram = get_notifier('telegram')
-	message_text = message
-	telegram.notify(token=token, chat_id = chat_id, message=message_text)
+    if name == 'Olya':
+        print(name)
+        chat_id = person_id_olya #сюда пишем "Current chat ID:" его узнаем @ifiers телеграм
+    else:
+        chat_id = person_id_boris
+    telegram = get_notifier('telegram')
+    message_text = message
+    telegram.notify(token=token, chat_id = chat_id, message=message_text)

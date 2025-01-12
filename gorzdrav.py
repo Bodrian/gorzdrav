@@ -29,7 +29,7 @@ def spec(url):
 def numer(url):
     numer_list = []
     rez = get_resp(url)
-    if rez['message'] != 'Отсутствуют свободные талоны. Попробуйте записаться позже или обратитесь в регистратуру медорганизации':
+    if rez.get('result') != None:
         for i in rez['result']:
             numer_list.append(i['visitStart'])
     else:
