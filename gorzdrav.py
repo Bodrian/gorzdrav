@@ -16,22 +16,29 @@ def get_resp(url): #получает ответ от страницы
         print("No response")
     return False
 
-def district(): #получает словарь районов в формате '1': 'Адмиралтейский',
-    distr = {}
-    url = 'https://gorzdrav.spb.ru/_api/api/v2/shared/districts'
-    rez = get_resp(url)
-    for i in rez['result']:
-        print(f'{i['id']} - {i['name']}')
-        distr[i['id']] = i['name']
-    return distr
-
-def hospital(url): #получает словарь адресов больниц
-    hospital_dic = {}
+def hospital(url):
     rez = get_resp(url)
     for i in rez['result']:
         print(f'{i['id']} - {i['address']} - {i['lpuShortName']}')
-        hospital_dic[i['id']] = i['address']
-    return hospital_dic
 
-def rez():
-    pass
+def spec(url):
+    rez = get_resp(url)
+    for i in rez['result']:
+        print(f'{i['id']} - {i['name']}')
+
+def numer(url):
+    numer_list = []
+    rez = get_resp(url)
+    for i in rez['result']:
+        numer_list.append(i['visitStart'])
+    return numer_list
+
+
+
+
+
+
+
+
+
+
