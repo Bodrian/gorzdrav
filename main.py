@@ -1,4 +1,5 @@
 from gorzdrav import hospital, spec, numer
+from telega import sent_message
 import time
 
 if __name__ == '__main__':
@@ -17,5 +18,8 @@ if __name__ == '__main__':
         if numer_l != num:
             print(num)
             numer_l = num
+            for i in numer_l:
+                sent_message(i)
+                sent_message(i, 'Olya')
         time.sleep(60)
 
