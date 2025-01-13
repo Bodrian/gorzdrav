@@ -30,9 +30,7 @@ def numer(url):
     rez = get_resp(url)
     numer_list = ['нет номерков']
     if rez is not False:
-        if rez.get('result') is None:
-            numer_list = ['нет номерков']
-        else:
+        if rez.get('result') is not None:
             numer_list = []
             for i in rez['result']:
                 numer_list.append(i['visitStart'])
