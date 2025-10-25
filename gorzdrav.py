@@ -21,10 +21,17 @@ def hospital(url):
     for i in rez['result']:
         print(f'{i['id']} - {i['address']} - {i['lpuShortName']}')
 
-def spec(url):
+def spec(url : str) -> dict:
+    '''
+        Возвращает словарь с id и названием специальностей
+        На экран выдает список id и названий специальностей
+    '''
     rez = get_resp(url)
+    doctors_name = {}
     for i in rez['result']:
         print(f'{i['id']} - {i['name']}')
+        doctors_name[i['id']] = i['name']
+    return doctors_name
 
 def numer(url):
     rez = get_resp(url)
@@ -35,7 +42,6 @@ def numer(url):
             for i in rez['result']:
                 numer_list.append(i['visitStart'])
     return numer_list
-
 
 
 
