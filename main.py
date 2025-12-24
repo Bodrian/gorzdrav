@@ -3,7 +3,7 @@ from telega import sent_message
 import time
 
 if __name__ == '__main__':
-    numer_l = []
+    numer_l = ''
     spec('https://gorzdrav.spb.ru/_api/api/v2/shared/districts') #выводим список районов города
     num_dist = input('Введите номер района:  ')
     hospital(f'https://gorzdrav.spb.ru/_api/api/v2/shared/district/{num_dist}/lpus')
@@ -32,14 +32,16 @@ if __name__ == '__main__':
             if not num:
                 num = ['нет номерков']
 
+        num = '\n'.join(num)
         if numer_l != num:
             print(num, ' - ' , doctor_name)
             numer_l = num
-            for i in numer_l:
-                if person_flag:
-                    sent_message(f'{i} - {doctor_name}', 'Olya')
-                else:
-                    sent_message(f'{i} - {doctor_name}')
+            if person_flag:
+                sent_message(f'{num} - {doctor_name}', 'Olya')
+            else:
+                sent_message(f'{num} - {doctor_name}')
 
         time.sleep(45)
+        
+
 
