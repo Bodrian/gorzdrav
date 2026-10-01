@@ -1,5 +1,6 @@
 from gorzdrav import hospital, spec, numer
-from telega import sent_message
+#from telega import sent_message
+from max_send import sent_message
 import time
 
 if __name__ == '__main__':
